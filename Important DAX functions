@@ -8,4 +8,10 @@ Dynamic Title = "Sales By "&SELECTEDVALUE('Dynamic Date Selection'[Type],"All")
 color code = IF(AND( scenario10[sum of amount]>=500,scenario10[sum of amount]<=10000),"Green")
 
 #Month To Date
-table filter Value = SELECTEDVALUE('table filter'[table filter])
+MTD Target = CALCULATE(SUM(Targets[sale]),DATESMTD(Targets[FROM_DATE]))
+
+#Year To Date
+YTD Target = CALCULATE(SUM(Targets[sale]),DATESYTD(Targets[FROM_DATE]))
+
+#Quarter To Date
+QTD Target = CALCULATE(SUM(Targets[sale]),DATESQTD(Targets[FROM_DATE]))
