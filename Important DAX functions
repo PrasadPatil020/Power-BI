@@ -1,0 +1,10 @@
+#calculationg Running Total
+Running Total = CALCULATE(SUM('Dynamic Date Selection'[Sales]),FILTER(ALL('Dynamic Date Selection'[Date]),'Dynamic Date Selection'[Date] <= MAX('Dynamic Date Selection'[Date])))
+
+#Creating Dynamic Title
+Dynamic Title = "Sales By "&SELECTEDVALUE('Dynamic Date Selection'[Type],"All")
+
+#If with two conditions
+color code = IF(AND( scenario10[sum of amount]>=500,scenario10[sum of amount]<=10000),"Green")
+
+
